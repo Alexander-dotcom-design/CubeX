@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Rubik's Cube Solver</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>Rubik's Cube Solver</h1>
+
+    <p class="subtitle">
+        Enter your physical cube, then follow the solution step by step.
+    </p>
+
+
+
+    <section class="input-section">
+
+        <h2>Enter Your Cube</h2>
+
+        <p class="instruction">
+            Select a color, then click the stickers to paint them.
+        </p>
+
+        <div class="selected-color">
+            Selected:
+            <span id="selectedColor">White</span>
+        </div>
+
+
+        <div class="palette">
+
+            <button class="palette-color white"
+                    data-color="U">
+                White
+            </button>
+
+            <button class="palette-color red"
+                    data-color="R">
+                Red
+            </button>
+
+            <button class="palette-color green"
+                    data-color="F">
+                Green
+            </button>
+
+            <button class="palette-color yellow"
+                    data-color="D">
+                Yellow
+            </button>
+
+            <button class="palette-color orange"
+                    data-color="L">
+                Orange
+            </button>
+
+            <button class="palette-color blue"
+                    data-color="B">
+                Blue
+            </button>
+
+        </div>
+
+
+        <!-- Cube painting area -->
+
+        <div class="paint-area">
+
+            <!-- U -->
+
+            <div class="face face-U"
+                 data-face="U">
+
+                <h3>Top</h3>
+
+            </div>
+
+
+            <!-- L -->
+
+            <div class="face face-L"
+                 data-face="L">
+
+                <h3>Left</h3>
+
+            </div>
+
+
+            <!-- F -->
+
+            <div class="face face-F"
+                 data-face="F">
+
+                <h3>Front</h3>
+
+            </div>
+
+
+            <!-- R -->
+
+            <div class="face face-R"
+                 data-face="R">
+
+                <h3>Right</h3>
+
+            </div>
+
+
+            <!-- B -->
+
+            <div class="face face-B"
+                 data-face="B">
+
+                <h3>Back</h3>
+
+            </div>
+
+
+            <!-- D -->
+
+            <div class="face face-D"
+                 data-face="D">
+
+                <h3>Bottom</h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button id="solveButton"
+                    class="solve-button">
+                SOLVE CUBE
+            </button>
+
+            <button id="clearButton"
+                    class="clear-button">
+                CLEAR CUBE
+            </button>
+
+        </div>
+
+
+        <div id="status"
+             class="status">
+            Loading solver...
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SOLUTION SECTION ================= -->
+
+    <section class="solution-section">
+
+        <h2>Solution</h2>
+
+
+        <!-- Demonstration cube -->
+
+        <div class="demo-area">
+
+            <h3>Move Demonstration</h3>
+
+            <p class="demo-hint">
+                The virtual cube shows the move you need to perform
+                on your physical cube.
+            </p>
+
+
+            <div class="demo-cube-container">
+
+                <div id="demoCube"
+                     class="demo-cube">
+
+                    <div class="demo-face demo-U"
+                         data-demo-face="U"></div>
+
+                    <div class="demo-face demo-R"
+                         data-demo-face="R"></div>
+
+                    <div class="demo-face demo-F"
+                         data-demo-face="F"></div>
+
+                    <div class="demo-face demo-D"
+                         data-demo-face="D"></div>
+
+                    <div class="demo-face demo-L"
+                         data-demo-face="L"></div>
+
+                    <div class="demo-face demo-B"
+                         data-demo-face="B"></div>
+
+                </div>
+
+            </div>
+
+
+            <div id="moveArrow"
+                 class="move-arrow">
+            </div>
+
+        </div>
+
+
+
+        <!-- Step information -->
+
+        <div class="step-card">
+
+            <div id="counter"
+                 class="counter">
+                0 / 0
+            </div>
+
+
+            <div id="step"
+                 class="step">
+                Enter your physical cube.
+            </div>
+
+
+            <div id="explanation"
+                 class="explanation">
+            </div>
+
+
+            <div id="move-large"
+                 class="move-large">
+            </div>
+
+
+            <div class="navigation">
+
+                <button id="previous"
+                        disabled>
+                    ← PREVIOUS
+                </button>
+
+                <button id="next"
+                        disabled>
+                    NEXT →
+                </button>
+
+            </div>
+
+
+            <div id="finish"
+                 class="finish">
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- cube.js -->
+
+<script src="https://unpkg.com/cubejs@1.3.2/lib/cube.js"></script>
+
+<script src="https://unpkg.com/cubejs@1.3.2/lib/solve.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
